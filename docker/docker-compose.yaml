@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mirage:
+    image: "mirage-ecs:latest"
+    container_name: mirage
+    expose:
+      - "8080" # mirage api
+      - "5000" # xDS API
+    env_file:
+      - .env
+  proxy:
+    build: ./envoy/
+    container_name: proxy
+    volumes:
+      - ./envoy:/root
+    ports:
+      - "8080:8080" # proxy
+      - "9901:9901" # envoy admin

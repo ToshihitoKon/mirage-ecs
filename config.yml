@@ -8,7 +8,7 @@ host:
 listen:
   # listen address
   # default is only listen from localhost
-  foreign_address: 0.0.0.0
+  foreign_address: 127.0.0.1
 
   # listen port and reverse proxy port
   http:
@@ -41,4 +41,4 @@ ecs:
         - '{{ env "MIRAGE_SUBNET_1" "subnet-aaaaaa" }}'
       security_groups:
         - '{{ env "MIRAGE_SECURITY_GROUP" "sg-111111" }}'
-      assign_public_ip: '{{ env "MIRAGE_ECS_ASSIGN_PUBLIC_IP" "ENABLED" }}'
+      assign_public_ip: ENABLED

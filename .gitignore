@@ -4,3 +4,5 @@ mirage-ecs
 *~
 .envrc
 pkg
+docker/.env
+docker/html
